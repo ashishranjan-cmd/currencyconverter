@@ -10,6 +10,8 @@ export default function App() {
   const [currencyOptions, setCurrencyOptions] = useState([])
   const [fromCurrency, setFromCurrency] = useState()
   const [toCurrency, setToCurrency] = useState()
+  const [exchangeRate, setExchangeRate] = useState()
+  const [amount, setAmount] = useState(1)
 
   useEffect(() => {
     (async () => {
@@ -21,6 +23,7 @@ export default function App() {
         setCurrencyOptions([data.base, ...Object.keys(data.rates)]) //destructured the objects
         setFromCurrency(data.base)
         setToCurrency(firstCurrency) 
+        setExchangeRate(data.rates[firstCurrency])
       })
     })();
   }, [])
