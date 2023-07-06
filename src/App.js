@@ -8,6 +8,8 @@ const Base_URL = 'https://api.exchangerate.host/latest';
 export default function App() {
 
   const [currencyOptions, setCurrencyOptions] = useState([])
+  const [fromCurrency, setFromCurrency] = useState()
+  const [toCurrency, setToCurrency] = useState()
 
   useEffect(() => {
     (async () => {
@@ -15,7 +17,10 @@ export default function App() {
       .then(res => res.json())
       //.then(data => console.log(data))
       .then(data => {
-        setCurrencyOptions([data.base, ...Object.keys(data.rates)]) //destructured the objects 
+        const firstCurrency = Object.keys(data.rates)[0]
+        setCurrencyOptions([data.base, ...Object.keys(data.rates)]) //destructured the objects
+        setFromCurrency(data.base)
+        setToCurrency(firstCurrency) 
       })
     })();
   }, [])
@@ -26,6 +31,8 @@ export default function App() {
         <Header />
         <InputForm 
             currencyOptions = { currencyOptions }
+            selectedFromCurrency = { fromCurrency }
+            selectedToCurrency = { toCurrency}
         />
       </div>
     </div>

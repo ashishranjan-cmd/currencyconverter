@@ -7,18 +7,22 @@ import './InputForm.css'
 export default function InputForm(props) {
 
     const {
-        currencyOptions
+        currencyOptions,
+        selectedFromCurrency,
+        selectedToCurrency
     } = props
   return (
     <>
         <form className='input-form'>
             <CurrencyDropdown
                 label="From"
-                currencyOptions = { currencyOptions } 
+                currencyOptions = { currencyOptions }
+                selectedCurrency = { selectedFromCurrency }
             />
             <CurrencyDropdown
                 label="To"
-                currencyOptions = { currencyOptions } 
+                currencyOptions = { currencyOptions }
+                selectedCurrency = { selectedToCurrency }
             />
             <AmountInput
                 label="Amount"
