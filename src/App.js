@@ -12,6 +12,12 @@ export default function App() {
   const [toCurrency, setToCurrency] = useState()
   const [exchangeRate, setExchangeRate] = useState()
   const [amount, setAmount] = useState(1)
+  const [exchangedAmount, setExchangedAmount] = useState()
+
+  const amountChange = (e) => {
+    setAmount(e.target.value);
+    setExchangedAmount(e.target.value * exchangeRate)
+  };
 
   useEffect(() => {
     (async () => {
@@ -28,6 +34,14 @@ export default function App() {
     })();
   }, [])
 
+  useEffect(() => {
+    (async () => {
+      await fetch(`${Base_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
+        .then(res => res.json())
+        .then(data => setExchangeRate(data.rates[toCurrency]))
+    })();
+  },[fromCurrency, toCurrency])
+
   return (
     <div className='main'>
       <div className='container' id='panel'>
@@ -38,6 +52,8 @@ export default function App() {
             selectedToCurrency = { toCurrency}
             onChangeFromCurrency = {event => setFromCurrency(event.target.value)}
             onChangeToCurrency = {event => setToCurrency(event.target.value)}
+            onAmountChange = { amountChange }
+            exchangedAmount = { exchangedAmount }
         />
       </div>
     </div>

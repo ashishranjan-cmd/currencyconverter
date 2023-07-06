@@ -11,7 +11,9 @@ export default function InputForm(props) {
         selectedFromCurrency,
         selectedToCurrency,
         onChangeFromCurrency,
-        onChangeToCurrency
+        onChangeToCurrency,
+        onAmountChange,
+        exchangedAmount
     } = props
   return (
     <>
@@ -31,9 +33,11 @@ export default function InputForm(props) {
             <AmountInput
                 label="Amount"
                 type="number"
+                onChange = { onAmountChange }
             />
             <AmountOutput
-                label="Exchanged Amount" 
+                label="Exchanged Amount"
+                value={ exchangedAmount }
             />
         </form>
     </>
