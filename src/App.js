@@ -33,6 +33,8 @@ export default function App() {
             currencyOptions = { currencyOptions }
             selectedFromCurrency = { fromCurrency }
             selectedToCurrency = { toCurrency}
+            onChangeFromCurrency = {event => setFromCurrency(event.target.value)}
+            onChangeToCurrency = {event => setToCurrency(event.target.value)}
         />
       </div>
     </div>

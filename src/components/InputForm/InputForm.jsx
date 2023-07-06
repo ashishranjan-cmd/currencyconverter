@@ -9,7 +9,9 @@ export default function InputForm(props) {
     const {
         currencyOptions,
         selectedFromCurrency,
-        selectedToCurrency
+        selectedToCurrency,
+        onChangeFromCurrency,
+        onChangeToCurrency
     } = props
   return (
     <>
@@ -18,11 +20,13 @@ export default function InputForm(props) {
                 label="From"
                 currencyOptions = { currencyOptions }
                 selectedCurrency = { selectedFromCurrency }
+                currencyChange = { onChangeFromCurrency }
             />
             <CurrencyDropdown
                 label="To"
                 currencyOptions = { currencyOptions }
                 selectedCurrency = { selectedToCurrency }
+                currencyChange = { onChangeToCurrency }
             />
             <AmountInput
                 label="Amount"

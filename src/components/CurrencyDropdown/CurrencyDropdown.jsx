@@ -6,7 +6,8 @@ export default function CurrencyDropdown(props) {
     const { 
         label, 
         currencyOptions,
-        selectedCurrency 
+        selectedCurrency,
+        currencyChange 
     } = props
 
     const uniqueCurrencyOptions = [...new Set(currencyOptions)];
@@ -14,7 +15,7 @@ export default function CurrencyDropdown(props) {
     return (
         <>
             <label htmlFor={ label }>{ label }</label>
-            <select name='currency-type' id={label + '-currency'} value={ selectedCurrency}>
+            <select name='currency-type' id={label + '-currency'} value={ selectedCurrency} onChange={ currencyChange }>
                 { uniqueCurrencyOptions.map(option => (
                     <option key={option} value={option}>{option}</option>
                 ))}
