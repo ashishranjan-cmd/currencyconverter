@@ -1,8 +1,4 @@
-.input-form {
-    padding: 20px;
-}
-
-select {
+input {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -10,5 +6,4 @@ select {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-family: inherit;
-    cursor: pointer;
 }

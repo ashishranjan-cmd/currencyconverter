@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './AmountOutput.css'
 
 export default function AmountOutput(props) {
     const { label, value } = props

@@ -1,4 +1,5 @@
 import React from 'react';
+import './AmountInput.css'
 
 export default function AmountInput(props) {
     const { label, type, onChange } = props

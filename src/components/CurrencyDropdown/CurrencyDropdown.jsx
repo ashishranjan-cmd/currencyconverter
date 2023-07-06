@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../InputForm/InputForm.css'
 
 export default function CurrencyDropdown(props) {
     const { label } = props
