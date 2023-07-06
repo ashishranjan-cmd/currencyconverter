@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-image {
+    margin-right: 5px;
+}
+
+.currency-image {
+    width: 50%;
+    border-radius: 10%;
+}
+
+.header-titles {
+    display: flex;
+    flex-direction: column;
+}
