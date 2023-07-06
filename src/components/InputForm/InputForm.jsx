@@ -1,6 +1,8 @@
 import React from 'react';
-import { AmountInput } from '../AmountInput/AmountInput.jsx'
 import { CurrencyDropdown } from '../CurrencyDropdown/CurrencyDropdown.jsx'
+import { AmountInput } from '../AmountInput/AmountInput.jsx'
+import { AmountOutput } from '../AmountOutput/AmountOutput.jsx'
+import './InputForm.css'
 
 export default function InputForm() {
   return (
@@ -9,9 +11,15 @@ export default function InputForm() {
             <CurrencyDropdown
                 label="From" 
             />
+            <CurrencyDropdown
+                label="To" 
+            />
             <AmountInput
                 label="Amount"
                 type="number"
+            />
+            <AmountOutput
+                label="Exchanged Amount" 
             />
         </form>
     </>
