@@ -4,15 +4,21 @@ import { AmountInput } from '../AmountInput/AmountInput.jsx'
 import { AmountOutput } from '../AmountOutput/AmountOutput.jsx'
 import './InputForm.css'
 
-export default function InputForm() {
+export default function InputForm(props) {
+
+    const {
+        currencyOptions
+    } = props
   return (
     <>
         <form className='input-form'>
             <CurrencyDropdown
-                label="From" 
+                label="From"
+                currencyOptions = { currencyOptions } 
             />
             <CurrencyDropdown
-                label="To" 
+                label="To"
+                currencyOptions = { currencyOptions } 
             />
             <AmountInput
                 label="Amount"
