@@ -4,8 +4,10 @@ import './Currency.css'
 
 export default function Currency() {
   return (
-    <div>
-      <Header/>
+    <div className='main'>
+      <div className='container' id='panel'>
+        <Header />
+      </div>
     </div>
   )
 }
